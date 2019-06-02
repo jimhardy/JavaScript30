@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
 </head>
+
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
@@ -18,29 +20,65 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('hello i am a %s string!', '💩');
 
     // Styled
+    console.log('%c i am some great text', 'font-size:50px')
 
     // warning!
+    console.warn('ahhhhhhh');
 
     // Error :|
+    console.error('ah shit');
 
     // Info
+    console.info('i am a fun fact');
 
     // Testing
+    console.assert(1 === 2, 'this shows when arg = false');
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
+    // console.log(p);
+    // console.dir(p); // shows all props and methods
 
     // Grouping together
+    dogs.forEach(dog => {
+      // console.group(`${dog.name}`);
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`this dog is called ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('james');
+    console.count('james');
+    console.count('james');
+    console.count('james');
+    console.count('james');
+    console.count('james');
+    console.count('james');
+    console.count('james');
 
     // timing
+    console.time('fetching data'); // start timer
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data'); // end timer with same string
+        console.log(data);
+      });
+
+    // console.table
+    console.table(dogs);
 
   </script>
 </body>
+
 </html>
